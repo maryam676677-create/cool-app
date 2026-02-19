@@ -1,19 +1,32 @@
+import { Playfair_Display } from "next/font/google";
+
+const playfair = Playfair_Display({
+subsets: ["latin"],
+weight: ["400", "700"],
+});
+
 export default function BooksPage() {
 return (
 <main
+className="fade-in"
 style={{
 minHeight: "100vh",
 padding: "60px 20px",
-color: "white",
+color: "#ffffff",
 maxWidth: "900px",
 margin: "0 auto",
 }}
+
 >
-<h1 style={{ marginBottom: "40px" }}>📚 Meine Bücher ansehen</h1>
+<h1 className={playfair.className} style={{ color: "#790f42" }}>
+📚 Meine Bücher ansehen
+</h1>
+
 
 {/* Lieblingsbuch */}
 <section style={sectionStyle}>
-<h2>⭐ Lieblingsbuch</h2>
+<h2 className={playfair.className} style={{ color: "#af1a62" }}>
+⭐ Lieblingsbuch</h2>
 
 <div style={cardStyle}>
 <h3>Atomic Habits</h3>
@@ -26,9 +39,13 @@ Ergebnisse bringen können. Sehr motivierend und praxisnah.
 </div>
 </section>
 
-{/* Gelesene Bücher */}
-<section style={sectionStyle}>
-<h2>📖 Gelesene Bücher</h2>
+<h2
+className={playfair.className}
+style={{ color: "#af1a62" }}
+>
+📖 Gelesene Bücher
+</h2>
+
 
 <div style={cardStyle}>
 <h3>The Alchemist</h3>
@@ -56,7 +73,6 @@ Ein verständlicher Einstieg in finanzielle Bildung und Mindset.
 Regt stark zum Nachdenken über Geld und Investitionen an.
 </p>
 </div>
-</section>
 </main>
 );
 }

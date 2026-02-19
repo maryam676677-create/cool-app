@@ -34,7 +34,7 @@ margin: "0 auto",
 <p>
 Atomic Habits hat meine Sicht auf Gewohnheiten komplett verändert.
 Das Buch zeigt, wie kleine tägliche Verbesserungen langfristig große
-Ergebnisse bringen können. Sehr motivierend und praxisnah geschrieben.
+Ergebnisse bringen können. Sehr motivierend und praxisnah.
 </p>
 </div>
 </section>

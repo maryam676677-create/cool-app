@@ -1,6 +1,8 @@
+"use client";
+
 import "./globals.css";
 import Link from "next/link";
-
+import { useState } from "react";
 
 import { Playfair_Display } from "next/font/google";
 import { Poppins } from "next/font/google";
@@ -20,24 +22,31 @@ children,
 }: {
 children: React.ReactNode;
 }) {
+const [dark, setDark] = useState(false);
+
 return (
 <html lang="de">
 <body
-className={poppins.className}
-style={{
-margin: 0,
-backgroundColor: "#f5f5f5",
-}}
+className={`${poppins.className} ${dark ? "dark" : ""}`}
+style={{ margin: 0 }}
 >
+{/* DARK MODE BUTTON */}
+<button
+onClick={() => setDark(!dark)}
+className="toggle"
+>
+{dark ? "☀️ Light Mode" : "🌙 Dark Mode"}
+</button>
 
 {/* HEADER */}
 <header
 style={{
 padding: "20px",
-backgroundColor: "#af1a62", // 💜 dunkles Lila
+backgroundColor: "#af1a62",
 color: "white",
 }}
-><h2 className={playfair.className}>
+>
+<h2 className={playfair.className}>
 📚 Meine Lese Welt
 </h2>
 
@@ -52,7 +61,7 @@ Meine Bücher
 </header>
 
 {/* SEITENINHALT */}
-<main>{children}</main>
+<main style={{ padding: "20px" }}>{children}</main>
 
 {/* FOOTER */}
 <footer
@@ -60,7 +69,8 @@ style={{
 padding: "15px",
 marginTop: "40px",
 textAlign: "center",
-backgroundColor: "#dddddd",
+backgroundColor: dark ? "#222" : "#dddddd",
+color: dark ? "white" : "black",
 }}
 >
 © 2026 Meine Lese Welt
@@ -69,4 +79,3 @@ backgroundColor: "#dddddd",
 </html>
 );
 }
-

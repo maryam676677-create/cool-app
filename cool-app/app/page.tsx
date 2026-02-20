@@ -5,9 +5,10 @@ const playfair = Playfair_Display({
 subsets: ["latin"],
 weight: ["400", "700"],
 });
+
 export default function HomePage() {
 return (
-<main 
+<main
 style={{
 minHeight: "100vh",
 display: "flex",
@@ -40,7 +41,6 @@ marginTop: "20px",
 Hier teile ich meine Gedanken. 💭🌙
 </p>
 
-
 {/* BUTTON → zweite Seite */}
 <Link
 href="/books"
@@ -48,8 +48,8 @@ style={{
 display: "inline-block",
 marginTop: "40px",
 padding: "14px 28px",
-backgroundColor: "#eef612",
-color: "#ffffff",
+backgroundColor: "#ef6f12",
+color: "#efe8e8",
 fontSize: "18px",
 borderRadius: "10px",
 textDecoration: "none",
@@ -61,6 +61,3 @@ Meine Bücher ⇨
 </main>
 );
 }
-
-
-

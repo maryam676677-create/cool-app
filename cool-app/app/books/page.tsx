@@ -88,7 +88,6 @@ Regt stark zum Nachdenken über Geld und Investitionen an.
 {/* MR BEAST MARQUEE */}
 {/* ============================= */}
 
-
 <section style={{ marginTop: "110px" }}>
 <div className="marquee">
 <div className="marquee-content">
@@ -101,6 +100,43 @@ Regt stark zum Nachdenken über Geld und Investitionen an.
 </div>
 </div>
 </section>
+
+{/* ============================= */}
+{/* WEISSE BUCHKARTEN */}
+{/* ============================= */}
+
+<section style={{ marginTop: "60px" }}>
+<div className="flex justify-start gap-6 flex-wrap">
+
+{/* Atomic Habits */}
+<div className="bg-white rounded-xl shadow-lg p-2 w-30 text-center hover:scale-105 transition">
+<img
+src="/books/atomic.jpg"
+alt="Atomic Habits"
+style={{ width: "450px", height: "auto" }}
+/>
+<h3 className="font-bold text-md text-gray-800">
+Atomic Habits
+</h3>
+</div>
+
+
+
+{/* Deep Work */}
+<div className="bg-white rounded-xl shadow-lg p-2 w-30 text-center hover:scale-105 transition">
+<img
+src="/books/Deep_Work.jpg"
+alt="Deep Work"
+style={{ width: "450px", height: "auto" }}
+/>
+<h3 className="font-bold text-md text-gray-800">
+Deep Work
+</h3>
+</div>
+
+</div>
+</section>
+
 </main>
 );
 }
@@ -123,4 +159,5 @@ color: "#f5c518",
 margin: "6px 0",
 fontSize: "18px",
 };
+
 

@@ -16,13 +16,33 @@ flexDirection: "column",
 justifyContent: "center",
 alignItems: "center",
 gap: "20px",
-color: "#af1a62",
+position: "relative",
+background: "url('/books/Hintergrund.jpg') center/cover no-repeat",
+}}
+>
+{/* Overlay */}
+
+<div
+style={{
+position: "absolute",
+inset: 0,
+backgroundColor: "rgba(0, 0, 0, 0.45)",
+}}
+/>
+
+{/* Inhalt */}
+<div
+style={{
+position: "relative",
+zIndex: 1,
+textAlign: "center",
+color: "white",
+padding: "0 20px",
 }}
 >
 <h1
 style={{
 fontSize: "48px",
-color: "#af1a62",
 fontWeight: "700",
 letterSpacing: "1px",
 }}
@@ -34,14 +54,12 @@ Willkommen in meiner LeseWelt 📚
 className={playfair.className}
 style={{
 fontSize: "22px",
-color: "#af1a62",
 marginTop: "20px",
 }}
 >
 Hier teile ich meine Gedanken. 💭🌙
 </p>
 
-{/* BUTTON → zweite Seite */}
 <Link
 href="/books"
 style={{
@@ -49,7 +67,7 @@ display: "inline-block",
 marginTop: "40px",
 padding: "14px 28px",
 backgroundColor: "#ef6f12",
-color: "#efe8e8",
+color: "white",
 fontSize: "18px",
 borderRadius: "10px",
 textDecoration: "none",
@@ -58,6 +76,7 @@ fontWeight: "bold",
 >
 Meine Bücher ⇨
 </Link>
+</div>
 </main>
 );
 }

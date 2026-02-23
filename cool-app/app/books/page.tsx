@@ -101,40 +101,76 @@ Regt stark zum Nachdenken über Geld und Investitionen an.
 </div>
 </section>
 
-{/* ============================= */}
-{/* WEISSE BUCHKARTEN */}
-{/* ============================= */}
 
-<section style={{ marginTop: "60px" }}>
-<div className="flex justify-start gap-6 flex-wrap">
+{/* ================================================= */}
+{/* BILD LINKS – TEXT RECHTS (GOODREADS STYLE) */}
+{/* ================================================= */}
+
+<section style={{ marginTop: "80px" }}>
 
 {/* Atomic Habits */}
-<div className="bg-white rounded-xl shadow-lg p-2 w-30 text-center hover:scale-105 transition">
+<div className="flex items-start mb-32" style={{ gap: "12px" }}>
+
+{/* Bild links */}
+<div className="flex-shrink-0">
 <img
 src="/books/atomic.jpg"
 alt="Atomic Habits"
-style={{ width: "450px", height: "auto" }}
+className="w-[280px] h-auto rounded-lg shadow-lg"
 />
-<h3 className="font-bold text-md text-gray-800">
-Atomic Habits
-</h3>
 </div>
 
+{/* Text rechts */}
+<div className={`${playfair.className} max-w-xl`}>
+<h2 className="text-2xl font-bold mb-4">
+Atomic Habits
+</h2>
 
+<p className="text-gray-700 leading-relaxed mb-4">
+Ich habe dieses Buch gelesen, weil ich meine Gewohnheiten
+verbessern wollte. Es zeigt klar, wie kleine tägliche Schritte
+langfristig große Veränderungen bringen.
+</p>
+
+<p className="text-gray-700 leading-relaxed">
+Besonders wichtig fand ich die Idee, dass gute Systeme wichtiger
+sind als reine Motivation.
+</p>
+</div>
+
+</div>
 
 {/* Deep Work */}
-<div className="bg-white rounded-xl shadow-lg p-2 w-30 text-center hover:scale-105 transition">
+<div className="flex items-start mb-32" style={{ gap: "12px" }}>
+
+{/* Bild links */}
+<div className="flex-shrink-0">
 <img
 src="/books/Deep_Work.jpg"
 alt="Deep Work"
-style={{ width: "450px", height: "auto" }}
+className="w-[280px] h-auto rounded-lg shadow-lg"
 />
-<h3 className="font-bold text-md text-gray-800">
+</div>
+
+{/* Text rechts */}
+<div className={`${playfair.className} max-w-xl`}>
+<h2 className="text-2xl font-bold mb-4">
 Deep Work
-</h3>
+</h2>
+
+<p className="text-gray-700 leading-relaxed mb-4">
+Dieses Buch hat mir geholfen, mich besser zu konzentrieren
+und Ablenkungen zu vermeiden.
+</p>
+
+<p className="text-gray-700 leading-relaxed">
+Es zeigt, wie fokussiertes Arbeiten zu besseren Ergebnissen
+und höherer Produktivität führt.
+</p>
 </div>
 
 </div>
+
 </section>
 
 </main>

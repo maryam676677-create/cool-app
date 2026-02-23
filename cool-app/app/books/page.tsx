@@ -1,4 +1,6 @@
+"use client";
 import { Playfair_Display, Luckiest_Guy } from "next/font/google";
+import { use } from "react";
 
 const playfair = Playfair_Display({
 subsets: ["latin"],
@@ -84,93 +86,129 @@ Regt stark zum Nachdenken über Geld und Investitionen an.
 </p>
 </div>
 
-{/* ============================= */}
 {/* MR BEAST MARQUEE */}
-{/* ============================= */}
-
 <section style={{ marginTop: "110px" }}>
 <div className="marquee">
 <div className="marquee-content">
 <span className={`${beastFont.className} beast-text`}>
-⭐📚 MEINE EMPFEHLUNG ⭐📚 MEINE EMPFEHLUNG ⭐📚 MEINE EMPFEHLUNG ⭐📚
+⭐📚 MEINE EMPFEHLUNG ⭐📚 MEINE EMPFEHLUNG ⭐📚 MEINE
+EMPFEHLUNG ⭐📚
 </span>
 <span className={`${beastFont.className} beast-text`}>
-⭐📚 MEINE EMPFEHLUNG ⭐📚 MEINE EMPFEHLUNG ⭐📚 MEINE EMPFEHLUNG ⭐📚
+⭐📚 MEINE EMPFEHLUNG ⭐📚 MEINE EMPFEHLUNG ⭐📚 MEINE
+EMPFEHLUNG ⭐📚
 </span>
 </div>
 </div>
 </section>
 
-
-{/* ================================================= */}
-{/* BILD LINKS – TEXT RECHTS (GOODREADS STYLE) */}
-{/* ================================================= */}
-
+{/* BILD LINKS – TEXT RECHTS */}
 <section style={{ marginTop: "80px" }}>
-
 {/* Atomic Habits */}
 <div className="flex items-start mb-32" style={{ gap: "12px" }}>
-
-{/* Bild links */}
 <div className="flex-shrink-0">
 <img
 src="/books/atomic.jpg"
 alt="Atomic Habits"
-className="w-[280px] h-auto rounded-lg shadow-lg"
+className="w-[280px] h-auto rounded-lg shadow-lg transition-transform duration-300 hover:scale-120"
 />
 </div>
 
-{/* Text rechts */}
 <div className={`${playfair.className} max-w-xl`}>
 <h2 className="text-2xl font-bold mb-4">
-Atomic Habits
+<a
+href="https://www.amazon.de/s?k=Atomic+Habits"
+target="_blank"
+rel="noopener noreferrer"
+className="hover:underline hover:text-green-500 transition-colors duration-200"
+>
+🔗 Atomic Habits
+</a>
 </h2>
 
-<p className="text-gray-700 leading-relaxed mb-4">
+<p className="text-gray-800 dark:text-white leading-relaxed">
 Ich habe dieses Buch gelesen, weil ich meine Gewohnheiten
 verbessern wollte. Es zeigt klar, wie kleine tägliche Schritte
 langfristig große Veränderungen bringen.
 </p>
 
-<p className="text-gray-700 leading-relaxed">
+<p className="text-gray-800 dark:text-white leading-relaxed">
 Besonders wichtig fand ich die Idee, dass gute Systeme wichtiger
 sind als reine Motivation.
 </p>
 </div>
-
 </div>
 
 {/* Deep Work */}
 <div className="flex items-start mb-32" style={{ gap: "12px" }}>
-
-{/* Bild links */}
 <div className="flex-shrink-0">
 <img
 src="/books/Deep_Work.jpg"
 alt="Deep Work"
-className="w-[280px] h-auto rounded-lg shadow-lg"
+className="w-[280px] h-auto rounded-lg shadow-lg transition-transform duration-300 hover:scale-120"
 />
 </div>
 
-{/* Text rechts */}
 <div className={`${playfair.className} max-w-xl`}>
 <h2 className="text-2xl font-bold mb-4">
-Deep Work
+<a
+href="https://www.amazon.de/s?k=Deep+Work+Cal+Newport"
+target="_blank"
+rel="noopener noreferrer"
+className="hover:underline hover:text-green-500 transition-colors duration-200"
+>
+🔗 Deep Work
+</a>
 </h2>
 
-<p className="text-gray-700 leading-relaxed mb-4">
+<p className="text-gray-800 dark:text-white leading-relaxed">
 Dieses Buch hat mir geholfen, mich besser zu konzentrieren
 und Ablenkungen zu vermeiden.
 </p>
 
-<p className="text-gray-700 leading-relaxed">
+<p className="text-gray-800 dark:text-white leading-relaxed">
 Es zeigt, wie fokussiertes Arbeiten zu besseren Ergebnissen
 und höherer Produktivität führt.
 </p>
 </div>
-
 </div>
+</section>
 
+{/* ===================== */}
+{/* FORMULAR GANZ UNTEN */}
+{/* ===================== */}
+
+<section style={{ marginTop: "100px", marginBottom: "60px" }}>
+<h2
+className={playfair.className}
+style={{ color: "#af1a62", marginBottom: "20px" }}
+>
+📩 Buchempfehlung senden
+</h2>
+
+<form style={formStyle}>
+<input
+type="text"
+placeholder="Dein Name"
+style={inputStyle}
+/>
+
+<input
+type="text"
+placeholder="Buchname"
+style={inputStyle}
+/>
+
+<textarea
+placeholder="Warum empfiehlst du dieses Buch?"
+rows={4}
+style={inputStyle}
+/>
+
+<button type="submit" style={buttonStyle}>
+Absenden
+</button>
+</form>
 </section>
 
 </main>
@@ -196,4 +234,25 @@ margin: "6px 0",
 fontSize: "18px",
 };
 
+const formStyle = {
+display: "flex",
+flexDirection: "column" as const,
+gap: "15px",
+};
 
+const inputStyle = {
+padding: "12px",
+borderRadius: "8px",
+border: "1px solid #ccc",
+fontSize: "16px",
+};
+
+const buttonStyle = {
+padding: "12px",
+borderRadius: "8px",
+border: "none",
+backgroundColor: "#7a9f42",
+color: "white",
+fontSize: "16px",
+cursor: "pointer",
+};

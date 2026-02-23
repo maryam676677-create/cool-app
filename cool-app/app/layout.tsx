@@ -53,7 +53,7 @@ Meine Bücher
 </header>
 
 {/* SEITENINHALT */}
-<main className="p-5 min-h-screen">
+<main className="p-5 min-h-screen text-gray-800 dark:text-white">
 {children}
 </main>
 

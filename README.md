@@ -1,17 +1,44 @@
-# Meine Lese-Welt 📚
+📚 Meine Lese-Welt
 
-Meine Lese-Welt ist eine Web-App, mit der ich gelesene Bücher festhalten und organisieren kann.
 
-## Funktionen
-- Bücher hinzufügen
-- Gelesene Bücher anzeigen
-- Übersicht über meine Leseliste
+Live Demo:
 
-## Technologien
-- HTML
-- CSS
-- JavaScript
-- (optional: React / Next.js)
+👉 https://meine-lese-welt.vercel.app/
 
-## Status
-🚧 Projekt in Entwicklung
+
+
+Meine Lese-Welt ist eine Web-App, in der ich Bücher, die ich gelesen habe, bewerte und empfehle.
+
+Besucher können meine Rezensionen lesen und über einen direkten Link das Buch kaufen.
+
+✨ Features
+📖 Übersicht meiner gelesenen Bücher
+
+⭐ Persönliche Bewertung der Bücher
+
+📝 Kurze Reviews zu jedem Buch
+
+🌟 Markierung von Empfehlungen
+
+🔗 Direktlink zum Kaufen des Buches
+
+🛠️ Tech Stack
+HTML
+
+CSS
+
+JavaScript
+
+Deployment über Vercel
+
+🌍 Deployment
+
+
+Die App ist live über Vercel deployed:
+
+https://meine-lese-welt.vercel.app/
+
+📌 Projektstatus
+
+
+🚧 In Entwicklung – neue Bücher und Features werden regelmäßig ergänzt.

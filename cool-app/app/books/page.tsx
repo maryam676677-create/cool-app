@@ -1,4 +1,3 @@
-"use client";
 import { Playfair_Display, Luckiest_Guy } from "next/font/google";
 import { use } from "react";
 
@@ -85,6 +84,29 @@ Ein verständlicher Einstieg in finanzielle Bildung und Mindset.
 Regt stark zum Nachdenken über Geld und Investitionen an.
 </p>
 </div>
+{/* Aktuell am Lesen */}
+<h2
+className={playfair.className}
+style={{ color: "#af1a62", marginTop: "60px", marginBottom: "20px" }}
+>
+📖 Aktuell am Lesen
+</h2>
+
+<div style={cardStyle}>
+<div style={headerStyle}>
+<h3>The 5 AM Club</h3>
+<span style={progressBadge}>📖 45%</span>
+</div>
+
+<p style={ratingStyle}>★★★★☆</p>
+
+<p>
+The 5 AM Club zeigt, wie eine strukturierte Morgenroutine Fokus,
+Disziplin und persönliche Entwicklung stärkt. Das Buch motiviert,
+den Tag bewusst zu beginnen und langfristig erfolgreicher zu werden.
+</p>
+</div>
+
 
 {/* MR BEAST MARQUEE */}
 <section style={{ marginTop: "110px" }}>
@@ -232,6 +254,20 @@ const ratingStyle = {
 color: "#f5c518",
 margin: "6px 0",
 fontSize: "18px",
+};
+const headerStyle = {
+display: "flex",
+justifyContent: "space-between",
+alignItems: "center",
+};
+
+const progressBadge = {
+backgroundColor: "#f5c518",
+color: "black",
+padding: "4px 12px",
+borderRadius: "20px",
+fontWeight: "bold",
+fontSize: "14px",
 };
 
 const formStyle = {

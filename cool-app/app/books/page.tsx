@@ -1,3 +1,5 @@
+"use client";
+import { useState } from "react";
 import { Playfair_Display, Luckiest_Guy } from "next/font/google";
 import { use } from "react";
 
@@ -12,6 +14,36 @@ weight: ["400"],
 });
 
 export default function BooksPage() {
+
+/* ===================== */
+/* FORM STATE */
+/* ===================== */
+
+const [name, setName] = useState("");
+const [book, setBook] = useState("");
+const [message, setMessage] = useState("");
+
+async function handleSubmit(e: React.FormEvent) {
+e.preventDefault();
+
+const res = await fetch("/api/contact", {
+method: "POST",
+headers: {
+"Content-Type": "application/json",
+},
+body: JSON.stringify({ name, book, message }),
+});
+
+if (res.ok) {
+alert("Empfehlung gesendet ✅");
+setName("");
+setBook("");
+setMessage("");
+} else {
+alert("Fehler beim Senden ❌");
+}
+}
+
 return (
 <main
 className="fade-in"
@@ -22,6 +54,11 @@ maxWidth: "900px",
 margin: "0 auto",
 }}
 >
+
+{/* ------------------- */
+/* DEIN GANZER CONTENT */
+/* ------------------- */}
+
 {/* Titel */}
 <h1
 className={playfair.className}
@@ -84,6 +121,7 @@ Ein verständlicher Einstieg in finanzielle Bildung und Mindset.
 Regt stark zum Nachdenken über Geld und Investitionen an.
 </p>
 </div>
+
 {/* Aktuell am Lesen */}
 <h2
 className={playfair.className}
@@ -102,12 +140,9 @@ style={{ color: "#af1a62", marginTop: "60px", marginBottom: "20px" }}
 
 <p>
 The 5 AM Club zeigt, wie eine strukturierte Morgenroutine Fokus,
-Disziplin und persönliche Entwicklung stärkt. Das Buch motiviert,
-den Tag bewusst zu beginnen und langfristig erfolgreicher zu werden.
+Disziplin und persönliche Entwicklung stärkt.
 </p>
 </div>
-
-
 {/* MR BEAST MARQUEE */}
 <section style={{ marginTop: "110px" }}>
 <div className="marquee">
@@ -196,6 +231,7 @@ und höherer Produktivität führt.
 </div>
 </section>
 
+
 {/* ===================== */}
 {/* FORMULAR GANZ UNTEN */}
 {/* ===================== */}
@@ -208,23 +244,32 @@ style={{ color: "#af1a62", marginBottom: "20px" }}
 📩 Buchempfehlung senden
 </h2>
 
-<form style={formStyle}>
+<form style={formStyle} onSubmit={handleSubmit}>
 <input
 type="text"
 placeholder="Dein Name"
 style={inputStyle}
+value={name}
+onChange={(e) => setName(e.target.value)}
+required
 />
 
 <input
 type="text"
 placeholder="Buchname"
 style={inputStyle}
+value={book}
+onChange={(e) => setBook(e.target.value)}
+required
 />
 
 <textarea
 placeholder="Warum empfiehlst du dieses Buch?"
 rows={4}
 style={inputStyle}
+value={message}
+onChange={(e) => setMessage(e.target.value)}
+required
 />
 
 <button type="submit" style={buttonStyle}>
@@ -255,6 +300,7 @@ color: "#f5c518",
 margin: "6px 0",
 fontSize: "18px",
 };
+
 const headerStyle = {
 display: "flex",
 justifyContent: "space-between",

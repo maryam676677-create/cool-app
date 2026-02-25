@@ -20,7 +20,9 @@ const [dark, setDark] = useState(false);
 return (
 <html lang="de" className={dark ? "dark" : ""}>
 <body
-className={` bg-white dark:bg-gray-900 transition-colors duration-300`}
+className={` bg-white transition-colors duration-300`}
+
+
 style={{ margin: 0 }}
 >
 <header

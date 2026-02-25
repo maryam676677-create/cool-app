@@ -1,7 +1,7 @@
-"use client";
+ "use client";
 import { useState } from "react";
 import { Playfair_Display, Luckiest_Guy } from "next/font/google";
-import Link from "next/link";
+
 const playfair = Playfair_Display({
 subsets: ["latin"],
 weight: ["400", "700"],
@@ -58,21 +58,6 @@ maxWidth: "900px",
 margin: "0 auto",
 }}
 >
-<Link
-href="/"
-style={{
-display: "inline-block",
-marginTop: "20px",
-padding: "12px 20px",
-
-color: "blue",
-borderRadius: "12px",
-textDecoration: "none"
-}}
->
-← Zurück zur Startseite
-</Link>
-
 
 {/* Titel */}
 <h1
@@ -182,7 +167,7 @@ EMPFEHLUNG ⭐📚
 <img
 src="/books/atomic.jpg"
 alt="Atomic Habits"
-className="w-[280px] h-auto rounded-lg shadow-lg transition-transform duration-300 hover:scale-120"
+className="w-[280px] h-auto rounded-lg shadow-lg transition-transform duration-300 hover:scale-125"
 />
 </div>
 
@@ -217,7 +202,7 @@ sind als reine Motivation.
 <img
 src="/books/Deep_Work.jpg"
 alt="Deep Work"
-className="w-[280px] h-auto rounded-lg shadow-lg transition-transform duration-300 hover:scale-120"
+className="w-[280px] h-auto rounded-lg shadow-lg transition-transform duration-300 hover:scale-125"
 />
 </div>
 
@@ -246,7 +231,6 @@ und höherer Produktivität führt.
 </div>
 </section>
 
-
 {/* ===================== */}
 {/* FORMULAR GANZ UNTEN */}
 {/* ===================== */}
@@ -259,6 +243,7 @@ style={{ color: "#af1a62", marginBottom: "20px" }}
 📩 Buchempfehlung senden
 </h2>
 
+{!success && (
 <form style={formStyle} onSubmit={handleSubmit}>
 <input
 type="text"
@@ -290,49 +275,51 @@ required
 <button type="submit" style={buttonStyle}>
 Absenden
 </button>
+</form>
+)}
 
 {success && (
-<div style={{
+<div
+style={{
 marginTop: "15px",
 padding: "12px",
 backgroundColor: "#d4edda",
 color: "#155724",
 borderRadius: "8px",
 fontWeight: "bold",
-}}>
+}}
+>
 ❤️ Danke für deine Empfehlung!
 </div>
 )}
 
 {error && (
-<div style={{
+<div
+style={{
 marginTop: "15px",
 padding: "12px",
 backgroundColor: "#f8d7da",
 color: "#721c24",
 borderRadius: "8px",
-}}>
+}}
+>
 ❌ Fehler beim Senden. Bitte erneut versuchen.
 </div>
 )}
-
-</form>
 </section>
-
 </main>
 );
 }
-
 /* ========================= */
 /* Styles */
 /* ========================= */
 
 const cardStyle = {
-border: "1px solid #333",
+border: "3px solid #000000",
 borderRadius: "12px",
 padding: "20px",
 marginTop: "20px",
-backgroundColor: "#111",
+backgroundColor: "#5e0202",
 color: "white",
 };
 
@@ -349,7 +336,7 @@ alignItems: "center",
 };
 
 const progressBadge = {
-backgroundColor: "#f5c518",
+backgroundColor: "#0ad458",
 color: "black",
 padding: "4px 12px",
 borderRadius: "20px",
@@ -366,7 +353,7 @@ gap: "15px",
 const inputStyle = {
 padding: "12px",
 borderRadius: "8px",
-border: "1px solid #ccc",
+border: "1px solid #6a0e0e",
 fontSize: "16px",
 };
 

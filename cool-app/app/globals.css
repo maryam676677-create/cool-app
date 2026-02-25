@@ -13,8 +13,8 @@ box-sizing: border-box;
 }
 
 body {
-background-color: #f3f4f6;
-color: #111827; /*Text dunkle im light mode*/
+background-color: #ffffff;
+color: #2f2d2d; /*Text dunkle im light mode*/
 transition: background 0.3s ease, color 0.3s ease;
 }
 

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 ## Getting Started
@@ -34,3 +35,50 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+=======
+📚 Meine Lese-Welt
+
+
+Live Demo:
+
+👉 https://meine-lese-welt.vercel.app/
+
+
+
+Meine Lese-Welt ist eine Web-App, in der ich Bücher, die ich gelesen habe, bewerte und empfehle.
+
+Besucher können meine Rezensionen lesen und über einen direkten Link das Buch kaufen.
+
+✨ Features
+📖 Übersicht meiner gelesenen Bücher
+
+⭐ Persönliche Bewertung der Bücher
+
+📝 Kurze Reviews zu jedem Buch
+
+🌟 Markierung von Empfehlungen
+
+🔗 Direktlink zum Kaufen des Buches
+
+🛠️ Tech Stack
+
+HTML
+
+CSS
+
+JavaScript
+
+Deployment über Vercel
+
+🌍 Deployment
+
+
+Die App ist live über Vercel deployed:
+
+https://meine-lese-welt.vercel.app/
+
+📌 Projektstatus
+
+
+🚧 In Entwicklung – neue Bücher und Features werden regelmäßig ergänzt.
+>>>>>>> 83e3ccd04c61ab68ec1e2dd76534e3eb1dad5ce9

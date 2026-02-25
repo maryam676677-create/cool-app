@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
 import { Playfair_Display, Luckiest_Guy } from "next/font/google";
-
+import Link from "next/link";
 const playfair = Playfair_Display({
 subsets: ["latin"],
 weight: ["400", "700"],
@@ -58,6 +58,21 @@ maxWidth: "900px",
 margin: "0 auto",
 }}
 >
+<Link
+href="/"
+style={{
+display: "inline-block",
+marginTop: "20px",
+padding: "12px 20px",
+
+color: "blue",
+borderRadius: "12px",
+textDecoration: "none"
+}}
+>
+← Zurück zur Startseite
+</Link>
+
 
 {/* Titel */}
 <h1
@@ -364,3 +379,7 @@ color: "white",
 fontSize: "16px",
 cursor: "pointer",
 };
+
+
+
+

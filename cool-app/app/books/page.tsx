@@ -1,7 +1,6 @@
 "use client";
 import { useState } from "react";
 import { Playfair_Display, Luckiest_Guy } from "next/font/google";
-import { use } from "react";
 
 const playfair = Playfair_Display({
 subsets: ["latin"],
@@ -22,9 +21,14 @@ export default function BooksPage() {
 const [name, setName] = useState("");
 const [book, setBook] = useState("");
 const [message, setMessage] = useState("");
+const [success, setSuccess] = useState(false);
+const [error, setError] = useState(false);
 
 async function handleSubmit(e: React.FormEvent) {
 e.preventDefault();
+
+setSuccess(false);
+setError(false);
 
 const res = await fetch("/api/contact", {
 method: "POST",
@@ -35,12 +39,12 @@ body: JSON.stringify({ name, book, message }),
 });
 
 if (res.ok) {
-alert("Empfehlung gesendet ✅");
+setSuccess(true);
 setName("");
 setBook("");
 setMessage("");
 } else {
-alert("Fehler beim Senden ❌");
+setError(true);
 }
 }
 
@@ -54,10 +58,6 @@ maxWidth: "900px",
 margin: "0 auto",
 }}
 >
-
-{/* ------------------- */
-/* DEIN GANZER CONTENT */
-/* ------------------- */}
 
 {/* Titel */}
 <h1
@@ -275,6 +275,32 @@ required
 <button type="submit" style={buttonStyle}>
 Absenden
 </button>
+
+{success && (
+<div style={{
+marginTop: "15px",
+padding: "12px",
+backgroundColor: "#d4edda",
+color: "#155724",
+borderRadius: "8px",
+fontWeight: "bold",
+}}>
+❤️ Danke für deine Empfehlung!
+</div>
+)}
+
+{error && (
+<div style={{
+marginTop: "15px",
+padding: "12px",
+backgroundColor: "#f8d7da",
+color: "#721c24",
+borderRadius: "8px",
+}}>
+❌ Fehler beim Senden. Bitte erneut versuchen.
+</div>
+)}
+
 </form>
 </section>
 

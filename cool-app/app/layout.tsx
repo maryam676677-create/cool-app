@@ -1,13 +1,20 @@
 "use client";
-
+import {motion} from "framer-motion";
+import{usePathname} from "next/navigation";
 import "./globals.css";
 import Link from "next/link";
 import { useState } from "react";
-import { Luckiest_Guy } from "next/font/google";
+import { Luckiest_Guy, Playfair_Display } from "next/font/google";
+
 
 const luckiest = Luckiest_Guy({
 subsets: ["latin"],
 weight: "400",
+});
+
+const playfair = Playfair_Display({
+subsets: ["latin"],
+weight: ["400", "700"],
 });
 
 export default function RootLayout({
@@ -15,17 +22,18 @@ children,
 }: {
 children: React.ReactNode;
 }) {
+    const pathname = usePathname();
 const [dark, setDark] = useState(false);
 
 return (
 <html lang="de" className={dark ? "dark" : ""}>
 <body
-className={` bg-white transition-colors duration-300`}
-
-
+className={"bg-white transition-colors duration-300 " }
 style={{ margin: 0 }}
 >
 <header
+
+   className={playfair.className}
 style={{
 backgroundColor: "#af1a62",
 color: "white",
@@ -49,15 +57,27 @@ Meine Bücher
 </nav>
 </div>
 
-<button onClick={() => setDark(!dark)}>
+<button
+onClick={() => setDark(!dark)}
+className="bg-white text-purple-600 px-4 py-2 rounded-full font-semibold shadow-md hover:scale-105 transition-transform duration-200"
+>
 {dark ? "☀️ Light Mode" : "🌙 Dark Mode"}
 </button>
+
 </header>
 
 {/* SEITENINHALT */}
-<main className="p-5 min-h-screen text-gray-800 dark:text-white">
+<main className="min-h-screen text-gray-800 dark:text-white">
+<motion.div
+key={pathname}
+initial={{ opacity: 0, y: 20 }}
+animate={{ opacity: 1, y: 0 }}
+transition={{ duration: 0.7 }}
+>
 {children}
+</motion.div>
 </main>
+
 
 {/* FOOTER */}
 <footer className="footer">

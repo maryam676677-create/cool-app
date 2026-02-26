@@ -14,7 +14,7 @@ minHeight: "100vh",
 display: "flex",
 flexDirection: "column",
 justifyContent: "center",
-alignItems: "center",
+alignItems: "stretch",
 gap: "20px",
 position: "relative",
 background: "url('/books/Hintergrund.jpg') center/cover no-repeat",
@@ -40,7 +40,7 @@ color: "white",
 padding: "0 20px",
 }}
 >
-<h1
+<h1 className={playfair.className}
 style={{
 fontSize: "48px",
 fontWeight: "700",
@@ -66,7 +66,7 @@ style={{
 display: "inline-block",
 marginTop: "40px",
 padding: "14px 28px",
-backgroundColor: "#ef6f12",
+backgroundColor: "#0e8c97",
 color: "white",
 fontSize: "18px",
 borderRadius: "10px",

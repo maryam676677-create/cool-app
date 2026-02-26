@@ -1,7 +1,8 @@
  "use client";
+ import{ motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
 import { Playfair_Display, Luckiest_Guy } from "next/font/google";
-
+import Link from "next/link";
 const playfair = Playfair_Display({
 subsets: ["latin"],
 weight: ["400", "700"],
@@ -58,11 +59,20 @@ maxWidth: "900px",
 margin: "0 auto",
 }}
 >
-
+<Link
+  href="/"
+  className="inline-flex items-center gap-2 mt-6 
+ text-blue-300 
+ font-semibold 
+  hover:underline 
+ transition"
+>
+  ← Zurück zur Startseite
+</Link>
 {/* Titel */}
 <h1
 className={playfair.className}
-style={{ color: "#7a9f42", marginBottom: "30px" }}
+style={{ color: "#5c8c15", marginBottom: "40px", fontWeight: 700, fontSize: "25px" }}
 >
 📚 Meine Bücher ansehen
 </h1>
@@ -71,7 +81,7 @@ style={{ color: "#7a9f42", marginBottom: "30px" }}
 <section style={{ marginBottom: "50px" }}>
 <h2
 className={playfair.className}
-style={{ color: "#af1a62", marginBottom: "20px" }}
+style={{ color: "#af1a62", marginBottom: "20px", fontWeight: 700, fontSize: "22px" }}
 >
 ⭐ Lieblingsbuch
 </h2>
@@ -79,7 +89,7 @@ style={{ color: "#af1a62", marginBottom: "20px" }}
 <div style={cardStyle}>
 <h3>Atomic Habits</h3>
 <p style={ratingStyle}>★★★★★</p>
-<p>
+<p className={playfair.className} style={{ fontSize: "16px", lineHeight: "1.8", letterSpacing: "0.5px", color: "#f0f0f0" }}>
 Atomic Habits hat meine Sicht auf Gewohnheiten komplett verändert.
 Das Buch zeigt, wie kleine tägliche Verbesserungen langfristig
 große Ergebnisse bringen können. Sehr motivierend und praxisnah.
@@ -90,7 +100,7 @@ große Ergebnisse bringen können. Sehr motivierend und praxisnah.
 {/* Gelesene Bücher */}
 <h2
 className={playfair.className}
-style={{ color: "#af1a62", marginBottom: "20px" }}
+style={{ color: "#af1a62", marginBottom: "20px", fontWeight: 700, fontSize: "22px" }}
 >
 📖 Gelesene Bücher
 </h2>
@@ -98,7 +108,7 @@ style={{ color: "#af1a62", marginBottom: "20px" }}
 <div style={cardStyle}>
 <h3>The Alchemist</h3>
 <p style={ratingStyle}>★★★★☆</p>
-<p>
+<p className={playfair.className} style={{ fontSize: "16px", lineHeight: "1.8", letterSpacing: "0.5px", color: "#f0f0f0" }}>
 Eine inspirierende Geschichte über Träume und den eigenen Lebensweg.
 Einfach geschrieben, aber mit einer tiefen Botschaft.
 </p>
@@ -107,7 +117,7 @@ Einfach geschrieben, aber mit einer tiefen Botschaft.
 <div style={cardStyle}>
 <h3>Deep Work</h3>
 <p style={ratingStyle}>★★★★★</p>
-<p>
+<p className={playfair.className} style={{ fontSize: "16px", lineHeight: "1.8", letterSpacing: "0.5px", color: "#f0f0f0" }}>
 Dieses Buch hat mir geholfen, Fokus und Konzentration deutlich zu
 verbessern. Sehr hilfreich für produktives Arbeiten und Lernen.
 </p>
@@ -116,7 +126,7 @@ verbessern. Sehr hilfreich für produktives Arbeiten und Lernen.
 <div style={cardStyle}>
 <h3>Rich Dad Poor Dad</h3>
 <p style={ratingStyle}>★★★★☆</p>
-<p>
+<p className={playfair.className} style={{ fontSize: "16px", lineHeight: "1.8", letterSpacing: "0.5px", color: "#f0f0f0" }}>
 Ein verständlicher Einstieg in finanzielle Bildung und Mindset.
 Regt stark zum Nachdenken über Geld und Investitionen an.
 </p>
@@ -125,7 +135,7 @@ Regt stark zum Nachdenken über Geld und Investitionen an.
 {/* Aktuell am Lesen */}
 <h2
 className={playfair.className}
-style={{ color: "#af1a62", marginTop: "60px", marginBottom: "20px" }}
+style={{ color: "#af1a62", marginTop: "60px", marginBottom: "20px", fontWeight: 700, fontSize: "22px" }}
 >
 📖 Aktuell am Lesen
 </h2>
@@ -138,7 +148,7 @@ style={{ color: "#af1a62", marginTop: "60px", marginBottom: "20px" }}
 
 <p style={ratingStyle}>★★★★☆</p>
 
-<p>
+<p className={playfair.className} style={{ fontSize: "16px", lineHeight: "1.8", letterSpacing: "0.5px", color: "#f0f0f0" }}>
 The 5 AM Club zeigt, wie eine strukturierte Morgenroutine Fokus,
 Disziplin und persönliche Entwicklung stärkt.
 </p>
@@ -243,7 +253,15 @@ style={{ color: "#af1a62", marginBottom: "20px" }}
 📩 Buchempfehlung senden
 </h2>
 
-{!success && (
+<AnimatePresence mode="wait">
+{!success && !error ? (
+<motion.div
+key="form"
+initial={{ opacity: 0, y: 30 }}
+animate={{ opacity: 1, y: 0 }}
+exit={{ opacity: 0, y: -30 }}
+transition={{ duration: 0.7 }}
+>
 <form style={formStyle} onSubmit={handleSubmit}>
 <input
 type="text"
@@ -276,10 +294,28 @@ required
 Absenden
 </button>
 </form>
-)}
 
-{success && (
+{/* Tipp erscheint nur wenn Formular sichtbar */}
 <div
+style={{
+marginTop: "30px",
+padding: "12px",
+backgroundColor: "#fff3cd",
+color: "#856404",
+borderRadius: "8px",
+}}
+>
+💡 Tipp: Teile deine Lieblingsbücher mit mir! Ich freue mich auf deine Empfehlungen. 😊
+</div>
+
+</motion.div>
+) : success ? (
+<motion.div
+key="success"
+initial={{ opacity: 0, scale: 0.9 }}
+animate={{ opacity: 1, scale: 1 }}
+exit={{ opacity: 0 }}
+transition={{ duration: 0.4 }}
 style={{
 marginTop: "15px",
 padding: "12px",
@@ -290,11 +326,14 @@ fontWeight: "bold",
 }}
 >
 ❤️ Danke für deine Empfehlung!
-</div>
-)}
-
-{error && (
-<div
+</motion.div>
+) : (
+<motion.div
+key="error"
+initial={{ opacity: 0, scale: 0.9 }}
+animate={{ opacity: 1, scale: 1 }}
+exit={{ opacity: 0 }}
+transition={{ duration: 0.4 }}
 style={{
 marginTop: "15px",
 padding: "12px",
@@ -304,9 +343,11 @@ borderRadius: "8px",
 }}
 >
 ❌ Fehler beim Senden. Bitte erneut versuchen.
-</div>
+</motion.div>
 )}
+</AnimatePresence>
 </section>
+
 </main>
 );
 }

@@ -4,7 +4,7 @@
 Live Demo:
 
 👉 cool-app
-maryam676677-create/cool-app
+🔗 https://cool-app-gray.vercel.app/
 
 
 
@@ -38,7 +38,7 @@ Deployment über Vercel
 
 Die App ist live über Vercel deployed:
 
-https://meine-lese-welt.vercel.app/
+https://cool-app-gray.vercel.app/
 
 📌 Projektstatus
 
